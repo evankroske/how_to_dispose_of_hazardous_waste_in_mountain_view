@@ -46,9 +46,14 @@ public:
     return _ivars.addresses.size();
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithUTF8String:_ivars.addresses[(long)indexPath.row].c_str()];
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell =
+        [tableView
+            dequeueReusableCellWithIdentifier:@"LocationListPrototypeCell"
+            forIndexPath:indexPath];
+    cell.textLabel.text =
+        [NSString stringWithUTF8String:_ivars.addresses[(long)indexPath.row].c_str()];
     return cell;
 }
 
