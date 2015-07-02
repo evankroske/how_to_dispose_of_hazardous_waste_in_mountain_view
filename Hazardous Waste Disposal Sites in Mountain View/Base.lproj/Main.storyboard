@@ -102,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="550" y="434"/>
         </scene>
-        <!--Location List Table View Controller-->
+        <!--Where to drop off batteries-->
         <scene sceneID="XPp-5C-6XK">
             <objects>
                 <tableViewController id="T9f-zK-OLg" customClass="LocationListTableViewController" sceneMemberID="viewController">
@@ -123,6 +123,7 @@
                             <outlet property="delegate" destination="T9f-zK-OLg" id="Ls6-cc-hUd"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Where to drop off batteries" id="Ztd-W2-b9h"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWK-VV-Mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
