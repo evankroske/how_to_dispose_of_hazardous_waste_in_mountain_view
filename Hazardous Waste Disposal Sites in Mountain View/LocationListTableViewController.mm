@@ -7,12 +7,19 @@
 //
 
 #import "LocationListTableViewController.h"
+#include <vector>
+#include <string>
+using std::vector;
+using std::string;
 
-@interface LocationListTableViewController ()
-
-@end
-
-@implementation LocationListTableViewController
+class LocationListTableViewControllerInstanceVariables {
+public:
+    vector<string> addresses;
+    LocationListTableViewControllerInstanceVariables() : addresses{"1297 W. El Camino Real", "2555 Charleston Road", "134 San Antonio Circle"} {}
+};
+@implementation LocationListTableViewController {
+    LocationListTableViewControllerInstanceVariables _ivars;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,12 +43,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return _ivars.addresses.size();
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
+    cell.textLabel.text = [NSString stringWithUTF8String:_ivars.addresses[(long)indexPath.row].c_str()];
     return cell;
 }
 
