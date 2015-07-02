@@ -100,7 +100,11 @@ public:
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     string address = _ivars.addresses[(long)indexPath.row];
     NSURLComponents *components = [NSURLComponents componentsWithString:@"http://maps.apple.com/"];
-    components.queryItems = @[[NSURLQueryItem queryItemWithName:@"q" value:[NSString stringWithUTF8String:address.c_str()]]];
+    components.queryItems =
+        @[
+            [NSURLQueryItem
+                queryItemWithName:@"q"
+                value:[NSString stringWithUTF8String:(address + ", Mountain View, CA").c_str()]]];
     [[UIApplication sharedApplication] openURL:components.URL];
 }
 
