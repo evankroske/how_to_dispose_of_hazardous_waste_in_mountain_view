@@ -29,7 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3B0C03711B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hazardous Waste Disposal Sites in Mountain View.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0C03711B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain View.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "How to Dispose of Hazardous Waste in Mountain View.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0C03751B40F483001B3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B0C03761B40F483001B3762 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3B0C03781B40F483001B3762 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,7 +39,7 @@
 		3B0C037F1B40F483001B3762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B0C03811B40F483001B3762 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3B0C03841B40F483001B3762 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		3B0C038A1B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain ViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hazardous Waste Disposal Sites in Mountain ViewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B0C038A1B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain ViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "How to Dispose of Hazardous Waste in Mountain ViewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0C038F1B40F483001B3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B0C03901B40F483001B3762 /* Hazardous_Waste_Disposal_Sites_in_Mountain_ViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hazardous_Waste_Disposal_Sites_in_Mountain_ViewTests.m; sourceTree = "<group>"; };
 		3BEB9E881B45A2B80044051D /* LocationListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationListTableViewController.h; sourceTree = "<group>"; };
@@ -78,8 +78,8 @@
 		3B0C03721B40F483001B3762 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3B0C03711B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain View.app */,
-				3B0C038A1B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain ViewTests.xctest */,
+				3B0C03711B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain View.app */,
+				3B0C038A1B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain ViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -132,9 +132,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3B0C03701B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain View */ = {
+		3B0C03701B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain View */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B0C03941B40F483001B3762 /* Build configuration list for PBXNativeTarget "Hazardous Waste Disposal Sites in Mountain View" */;
+			buildConfigurationList = 3B0C03941B40F483001B3762 /* Build configuration list for PBXNativeTarget "How to Dispose of Hazardous Waste in Mountain View" */;
 			buildPhases = (
 				3B0C036D1B40F483001B3762 /* Sources */,
 				3B0C036E1B40F483001B3762 /* Frameworks */,
@@ -144,14 +144,14 @@
 			);
 			dependencies = (
 			);
-			name = "Hazardous Waste Disposal Sites in Mountain View";
+			name = "How to Dispose of Hazardous Waste in Mountain View";
 			productName = "Hazardous Waste Disposal Sites in Mountain View";
-			productReference = 3B0C03711B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain View.app */;
+			productReference = 3B0C03711B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain View.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3B0C03891B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain ViewTests */ = {
+		3B0C03891B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain ViewTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3B0C03971B40F483001B3762 /* Build configuration list for PBXNativeTarget "Hazardous Waste Disposal Sites in Mountain ViewTests" */;
+			buildConfigurationList = 3B0C03971B40F483001B3762 /* Build configuration list for PBXNativeTarget "How to Dispose of Hazardous Waste in Mountain ViewTests" */;
 			buildPhases = (
 				3B0C03861B40F483001B3762 /* Sources */,
 				3B0C03871B40F483001B3762 /* Frameworks */,
@@ -162,9 +162,9 @@
 			dependencies = (
 				3B0C038C1B40F483001B3762 /* PBXTargetDependency */,
 			);
-			name = "Hazardous Waste Disposal Sites in Mountain ViewTests";
+			name = "How to Dispose of Hazardous Waste in Mountain ViewTests";
 			productName = "Hazardous Waste Disposal Sites in Mountain ViewTests";
-			productReference = 3B0C038A1B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain ViewTests.xctest */;
+			productReference = 3B0C038A1B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain ViewTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3B0C036C1B40F483001B3762 /* Build configuration list for PBXProject "Hazardous Waste Disposal Sites in Mountain View" */;
+			buildConfigurationList = 3B0C036C1B40F483001B3762 /* Build configuration list for PBXProject "How to Dispose of Hazardous Waste in Mountain View" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -197,8 +197,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3B0C03701B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain View */,
-				3B0C03891B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain ViewTests */,
+				3B0C03701B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain View */,
+				3B0C03891B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain ViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,7 +249,7 @@
 /* Begin PBXTargetDependency section */
 		3B0C038C1B40F483001B3762 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3B0C03701B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain View */;
+			target = 3B0C03701B40F483001B3762 /* How to Dispose of Hazardous Waste in Mountain View */;
 			targetProxy = 3B0C038B1B40F483001B3762 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -362,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hazardous Waste Disposal Sites in Mountain View/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "How to Dispose of Hazardous Waste in Mountain View";
 			};
 			name = Debug;
 		};
@@ -372,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hazardous Waste Disposal Sites in Mountain View/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "How to Dispose of Hazardous Waste in Mountain View";
 			};
 			name = Release;
 		};
@@ -390,8 +390,8 @@
 				);
 				INFOPLIST_FILE = "Hazardous Waste Disposal Sites in Mountain ViewTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hazardous Waste Disposal Sites in Mountain View.app/Hazardous Waste Disposal Sites in Mountain View";
+				PRODUCT_NAME = "How to Dispose of Hazardous Waste in Mountain ViewTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/How to Dispose of Hazardous Waste in Mountain View.app/How to Dispose of Hazardous Waste in Mountain View";
 			};
 			name = Debug;
 		};
@@ -405,15 +405,15 @@
 				);
 				INFOPLIST_FILE = "Hazardous Waste Disposal Sites in Mountain ViewTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hazardous Waste Disposal Sites in Mountain View.app/Hazardous Waste Disposal Sites in Mountain View";
+				PRODUCT_NAME = "How to Dispose of Hazardous Waste in Mountain ViewTests";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/How to Dispose of Hazardous Waste in Mountain View.app/How to Dispose of Hazardous Waste in Mountain View";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3B0C036C1B40F483001B3762 /* Build configuration list for PBXProject "Hazardous Waste Disposal Sites in Mountain View" */ = {
+		3B0C036C1B40F483001B3762 /* Build configuration list for PBXProject "How to Dispose of Hazardous Waste in Mountain View" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B0C03921B40F483001B3762 /* Debug */,
@@ -422,7 +422,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B0C03941B40F483001B3762 /* Build configuration list for PBXNativeTarget "Hazardous Waste Disposal Sites in Mountain View" */ = {
+		3B0C03941B40F483001B3762 /* Build configuration list for PBXNativeTarget "How to Dispose of Hazardous Waste in Mountain View" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B0C03951B40F483001B3762 /* Debug */,
@@ -431,7 +431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3B0C03971B40F483001B3762 /* Build configuration list for PBXNativeTarget "Hazardous Waste Disposal Sites in Mountain ViewTests" */ = {
+		3B0C03971B40F483001B3762 /* Build configuration list for PBXNativeTarget "How to Dispose of Hazardous Waste in Mountain ViewTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B0C03981B40F483001B3762 /* Debug */,

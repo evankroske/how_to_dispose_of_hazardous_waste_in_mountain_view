@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B0C03701B40F483001B3762"
-               BuildableName = "Hazardous Waste Disposal Sites in Mountain View.app"
-               BlueprintName = "Hazardous Waste Disposal Sites in Mountain View"
-               ReferencedContainer = "container:Hazardous Waste Disposal Sites in Mountain View.xcodeproj">
+               BuildableName = "How to Dispose of Hazardous Waste in Mountain View.app"
+               BlueprintName = "How to Dispose of Hazardous Waste in Mountain View"
+               ReferencedContainer = "container:How to Dispose of Hazardous Waste in Mountain View.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B0C03891B40F483001B3762"
-               BuildableName = "Hazardous Waste Disposal Sites in Mountain ViewTests.xctest"
-               BlueprintName = "Hazardous Waste Disposal Sites in Mountain ViewTests"
-               ReferencedContainer = "container:Hazardous Waste Disposal Sites in Mountain View.xcodeproj">
+               BuildableName = "How to Dispose of Hazardous Waste in Mountain ViewTests.xctest"
+               BlueprintName = "How to Dispose of Hazardous Waste in Mountain ViewTests"
+               ReferencedContainer = "container:How to Dispose of Hazardous Waste in Mountain View.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3B0C03891B40F483001B3762"
-               BuildableName = "Hazardous Waste Disposal Sites in Mountain ViewTests.xctest"
-               BlueprintName = "Hazardous Waste Disposal Sites in Mountain ViewTests"
-               ReferencedContainer = "container:Hazardous Waste Disposal Sites in Mountain View.xcodeproj">
+               BuildableName = "How to Dispose of Hazardous Waste in Mountain ViewTests.xctest"
+               BlueprintName = "How to Dispose of Hazardous Waste in Mountain ViewTests"
+               ReferencedContainer = "container:How to Dispose of Hazardous Waste in Mountain View.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B0C03701B40F483001B3762"
-            BuildableName = "Hazardous Waste Disposal Sites in Mountain View.app"
-            BlueprintName = "Hazardous Waste Disposal Sites in Mountain View"
-            ReferencedContainer = "container:Hazardous Waste Disposal Sites in Mountain View.xcodeproj">
+            BuildableName = "How to Dispose of Hazardous Waste in Mountain View.app"
+            BlueprintName = "How to Dispose of Hazardous Waste in Mountain View"
+            ReferencedContainer = "container:How to Dispose of Hazardous Waste in Mountain View.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B0C03701B40F483001B3762"
-            BuildableName = "Hazardous Waste Disposal Sites in Mountain View.app"
-            BlueprintName = "Hazardous Waste Disposal Sites in Mountain View"
-            ReferencedContainer = "container:Hazardous Waste Disposal Sites in Mountain View.xcodeproj">
+            BuildableName = "How to Dispose of Hazardous Waste in Mountain View.app"
+            BlueprintName = "How to Dispose of Hazardous Waste in Mountain View"
+            ReferencedContainer = "container:How to Dispose of Hazardous Waste in Mountain View.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,9 +96,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3B0C03701B40F483001B3762"
-            BuildableName = "Hazardous Waste Disposal Sites in Mountain View.app"
-            BlueprintName = "Hazardous Waste Disposal Sites in Mountain View"
-            ReferencedContainer = "container:Hazardous Waste Disposal Sites in Mountain View.xcodeproj">
+            BuildableName = "How to Dispose of Hazardous Waste in Mountain View.app"
+            BlueprintName = "How to Dispose of Hazardous Waste in Mountain View"
+            ReferencedContainer = "container:How to Dispose of Hazardous Waste in Mountain View.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
