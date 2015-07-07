@@ -6,13 +6,13 @@
 //
 //
 
-#import "ViewController.h"
+#import "LocationMapViewController.h"
 
-@interface ViewController ()
+@interface LocationMapViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LocationMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

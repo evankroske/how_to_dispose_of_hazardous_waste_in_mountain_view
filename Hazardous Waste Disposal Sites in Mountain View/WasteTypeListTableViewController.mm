@@ -51,7 +51,7 @@ public:
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   if (_ivars.wasteTypes[indexPath.row] == "Batteries") {
-    [self performSegueWithIdentifier:@"ShowLocationList" sender:self];
+    [self performSegueWithIdentifier:@"ShowLocations" sender:self];
   } else {
     [[UIApplication sharedApplication]
         openURL:[NSURL URLWithString:@"http://www.mountainview.gov/depts/pw/"

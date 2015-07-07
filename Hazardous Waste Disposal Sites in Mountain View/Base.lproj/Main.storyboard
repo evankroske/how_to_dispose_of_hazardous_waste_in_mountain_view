@@ -28,7 +28,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="How to dispose of..." id="vpx-Bo-uIY"/>
                     <connections>
-                        <segue destination="T9f-zK-OLg" kind="show" identifier="ShowLocationList" id="8xR-D2-szi"/>
+                        <segue destination="Dpg-tA-ag2" kind="show" identifier="ShowLocations" id="Yfa-gZ-xad"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yV-Rn-2j8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -61,6 +61,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWK-VV-Mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1218" y="434"/>
+        </scene>
+        <!--Where to drop off batteries-->
+        <scene sceneID="FCT-8H-0jr">
+            <objects>
+                <viewController id="Dpg-tA-ag2" customClass="LocationMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ixU-tr-Au7"/>
+                        <viewControllerLayoutGuide type="bottom" id="PxR-Va-8wE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Ja-lv-zAA" customClass="MKMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="delegate" destination="Dpg-tA-ag2" id="gfz-4n-1Lu"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Where to drop off batteries" id="xPl-41-DeD"/>
+                    <connections>
+                        <outlet property="view" destination="7Ja-lv-zAA" id="sR2-BP-wL5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJJ-aA-UEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1218" y="1080"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F2l-HN-UZR">
