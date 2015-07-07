@@ -15,11 +15,9 @@
     NSAssert([self.view isKindOfClass:[MKMapView class]], @"bad!");
     MKMapView *mapView = (MKMapView *)self.view;
     mapView.region = MKCoordinateRegionMakeWithDistance({37.3894, -122.0819}, 10000, 10000);
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate = {37.3894, -122.0819};
+    [mapView addAnnotation:annotation];
 }
 
 @end
