@@ -20,4 +20,8 @@
     [mapView addAnnotation:annotation];
 }
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    NSLog(@"%s", "called");
+}
+
 @end
