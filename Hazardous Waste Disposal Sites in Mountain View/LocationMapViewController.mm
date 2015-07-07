@@ -8,15 +8,13 @@
 
 #import "LocationMapViewController.h"
 
-@interface LocationMapViewController ()
-
-@end
-
 @implementation LocationMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    NSAssert([self.view isKindOfClass:[MKMapView class]], @"bad!");
+    MKMapView *mapView = (MKMapView *)self.view;
+    mapView.region = MKCoordinateRegionMakeWithDistance({37.3894, -122.0819}, 10000, 10000);
 }
 
 - (void)didReceiveMemoryWarning {
