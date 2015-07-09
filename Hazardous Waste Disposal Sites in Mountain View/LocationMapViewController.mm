@@ -23,25 +23,23 @@
 }
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation {
+  NSString *reuseIdentifier = @"DirectionsAnnotation";
   MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapView
-      dequeueReusableAnnotationViewWithIdentifier:@"CustomPinAnnotationView"];
+      dequeueReusableAnnotationViewWithIdentifier:reuseIdentifier];
 
   if (!pinView) {
     pinView = [[MKPinAnnotationView alloc]
         initWithAnnotation:annotation
-           reuseIdentifier:@"CustomPinAnnotationView"];
+           reuseIdentifier:reuseIdentifier];
     pinView.pinColor = MKPinAnnotationColorPurple;
     pinView.animatesDrop = YES;
     pinView.canShowCallout = YES;
 
     // Because this is an iOS app, add the detail disclosure button to display
     // details about the annotation in another view.
-    UIButton *rightButton =
+    UIButton *leftButton =
         [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    [rightButton addTarget:nil
-                    action:nil
-          forControlEvents:UIControlEventTouchUpInside];
-    pinView.rightCalloutAccessoryView = rightButton;
+    pinView.leftCalloutAccessoryView = leftButton;
   } else {
     pinView.annotation = annotation;
   }
