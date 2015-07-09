@@ -19,8 +19,10 @@
   MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
   annotation.coordinate = {37.3894, -122.0819};
   annotation.title = @"Mountain View";
+  annotation.subtitle = @"1297 W. El Camino Real";
   [mapView addAnnotation:annotation];
 }
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
             viewForAnnotation:(id<MKAnnotation>)annotation {
   NSString *reuseIdentifier = @"DirectionsAnnotation";
@@ -45,6 +47,12 @@
   }
 
   return pinView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+  NSAssert([view.annotation isKindOfClass:[MKPointAnnotation class]], @"type error");
+  MKPointAnnotation *annotation = view.annotation;
+  NSLog(@"%@", annotation.subtitle);
 }
 
 @end
