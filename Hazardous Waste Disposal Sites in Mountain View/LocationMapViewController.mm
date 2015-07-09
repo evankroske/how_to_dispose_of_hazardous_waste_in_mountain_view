@@ -37,8 +37,6 @@
     pinView.animatesDrop = YES;
     pinView.canShowCallout = YES;
 
-    // Because this is an iOS app, add the detail disclosure button to display
-    // details about the annotation in another view.
     UIButton *leftButton =
         [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     pinView.leftCalloutAccessoryView = leftButton;
@@ -52,7 +50,14 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
   NSAssert([view.annotation isKindOfClass:[MKPointAnnotation class]], @"type error");
   MKPointAnnotation *annotation = view.annotation;
-  NSLog(@"%@", annotation.subtitle);
+  NSString *address = annotation.subtitle;
+  NSURLComponents *components = [NSURLComponents componentsWithString:@"http://maps.apple.com/"];
+  components.queryItems =
+  @[
+    [NSURLQueryItem
+     queryItemWithName:@"q"
+     value:[address stringByAppendingString:@", Mountain View"]]];
+  [[UIApplication sharedApplication] openURL:components.URL];
 }
 
 @end
