@@ -7,6 +7,7 @@
 //
 
 #import "WasteTypeListTableViewController.h"
+#import "LocationMapViewController.h"
 
 #include <vector>
 #include <string>
@@ -17,8 +18,10 @@ using std::string;
 class WasteTypeListTableViewControllerInstanceVariables {
 public:
   vector<string> wasteTypes;
+  vector<string> addresses;
   WasteTypeListTableViewControllerInstanceVariables()
-      : wasteTypes{"Batteries", "Lamps", "Paint", "Other"} {}
+      : wasteTypes{"Batteries", "Lamps", "Paint", "Other"},
+  addresses{"1297 W. El Camino Real", "2555 Charleston Road", "134 San Antonio Circle"} {}
 };
 
 @implementation WasteTypeListTableViewController {
@@ -57,6 +60,12 @@ public:
         openURL:[NSURL URLWithString:@"http://www.mountainview.gov/depts/pw/"
                                      @"recycling/hazard/default.asp"]];
   }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+  NSAssert([segue.destinationViewController isKindOfClass:LocationMapViewController.class], @"bad");
+  LocationMapViewController *vc = segue.destinationViewController;
+  vc.addresses = &_ivars.addresses;
 }
 
 @end
