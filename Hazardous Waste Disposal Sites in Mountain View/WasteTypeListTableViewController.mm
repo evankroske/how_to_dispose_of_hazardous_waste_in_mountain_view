@@ -12,6 +12,8 @@
 #include <vector>
 #include <string>
 
+#include "Site.h"
+
 using std::vector;
 using std::string;
 
@@ -19,9 +21,15 @@ class WasteTypeListTableViewControllerInstanceVariables {
 public:
   vector<string> wasteTypes;
   vector<string> addresses;
+  vector<Site> sites;
   WasteTypeListTableViewControllerInstanceVariables()
       : wasteTypes{"Batteries", "Lamps", "Paint", "Other"},
-  addresses{"1297 W. El Camino Real", "2555 Charleston Road", "134 San Antonio Circle"} {}
+        addresses{"1297 W. El Camino Real", "2555 Charleston Road",
+                  "134 San Antonio Circle"},
+        sites{{"1297 W. El Camino Real", 37.3759962, -122.0601066},
+              {"2555 Charleston Road", 37.4210681, -122.0994957},
+              {"134 San Antonio Circle", 37.4076531, -122.1097241},
+              {"126 San Antonio Circle", 37.408972, -122.1101135}} {}
 };
 
 @implementation WasteTypeListTableViewController {
@@ -63,9 +71,12 @@ public:
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  NSAssert([segue.destinationViewController isKindOfClass:LocationMapViewController.class], @"bad");
+  NSAssert([segue.destinationViewController
+               isKindOfClass:LocationMapViewController.class],
+           @"bad");
   LocationMapViewController *vc = segue.destinationViewController;
   vc.addresses = &_ivars.addresses;
+  vc.sites = &_ivars.sites;
 }
 
 @end

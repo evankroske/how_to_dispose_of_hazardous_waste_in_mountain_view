@@ -12,9 +12,12 @@
 #include <string>
 #include <vector>
 
+#include "Site.h"
+
 @interface LocationMapViewController : UIViewController<MKMapViewDelegate>
 
 @property std::vector<std::string> *addresses;
+@property std::vector<Site> *sites;
 
 @end
 
