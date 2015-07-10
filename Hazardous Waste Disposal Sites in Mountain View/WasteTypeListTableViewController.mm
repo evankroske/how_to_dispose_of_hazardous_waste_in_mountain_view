@@ -26,10 +26,10 @@ public:
       : wasteTypes{"Batteries", "Lamps", "Paint", "Other"},
         addresses{"1297 W. El Camino Real", "2555 Charleston Road",
                   "134 San Antonio Circle"},
-        sites{{"1297 W. El Camino Real", 37.3759962, -122.0601066},
-              {"2555 Charleston Road", 37.4210681, -122.0994957},
-              {"134 San Antonio Circle", 37.4076531, -122.1097241},
-              {"126 San Antonio Circle", 37.408972, -122.1101135}} {}
+        sites{{"Blossom True Value Hardware", "1297 W. El Camino Real", 37.3759962, -122.0601066},
+              {"Orchard Supply Hardware", "2555 Charleston Road", 37.4210681, -122.0994957},
+              {"Bruce Bauer Lumber and Supply", "134 San Antonio Circle", 37.4076531, -122.1097241},
+              {"Stanford Electric", "126 San Antonio Circle", 37.408972, -122.1101135}} {}
 };
 
 @implementation WasteTypeListTableViewController {

@@ -19,7 +19,7 @@
   for (const Site& site : (*self.sites)) {
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     annotation.coordinate = {site.latitude, site.longitude};
-    annotation.title = @"Mountain View";
+    annotation.title = [NSString stringWithUTF8String:site.name.c_str()];
     annotation.subtitle = [NSString stringWithUTF8String:site.address.c_str()];
     [mapView addAnnotation:annotation];
   }

@@ -10,7 +10,7 @@
 #define How_to_Dispose_of_Hazardous_Waste_in_Mountain_View_Site_h
 
 struct Site {
-  std::string address;
+  std::string name, address;
   double latitude, longitude;
 };
 
