@@ -16,11 +16,13 @@
   MKMapView *mapView = (MKMapView *)self.view;
   mapView.region =
       MKCoordinateRegionMakeWithDistance({37.3894, -122.0819}, 10000, 10000);
-  MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-  annotation.coordinate = {37.3894, -122.0819};
-  annotation.title = @"Mountain View";
-  annotation.subtitle = @"1297 W. El Camino Real";
-  [mapView addAnnotation:annotation];
+  for (const Site& site : (*self.sites)) {
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    annotation.coordinate = {site.latitude, site.longitude};
+    annotation.title = [NSString stringWithUTF8String:site.name.c_str()];
+    annotation.subtitle = [NSString stringWithUTF8String:site.address.c_str()];
+    [mapView addAnnotation:annotation];
+  }
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView
