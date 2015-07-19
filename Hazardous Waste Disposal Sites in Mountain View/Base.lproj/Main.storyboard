@@ -36,33 +36,6 @@
             <point key="canvasLocation" x="550" y="434"/>
         </scene>
         <!--Where to drop off batteries-->
-        <scene sceneID="XPp-5C-6XK">
-            <objects>
-                <tableViewController id="T9f-zK-OLg" customClass="LocationListTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mvo-hQ-epv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationListPrototypeCell" id="2ss-Oo-1ut">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2ss-Oo-1ut" id="Abc-L2-Sx2">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="T9f-zK-OLg" id="vMw-88-07o"/>
-                            <outlet property="delegate" destination="T9f-zK-OLg" id="Ls6-cc-hUd"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Where to drop off batteries" id="Ztd-W2-b9h"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AWK-VV-Mf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1218" y="434"/>
-        </scene>
-        <!--Where to drop off batteries-->
         <scene sceneID="FCT-8H-0jr">
             <objects>
                 <viewController id="Dpg-tA-ag2" customClass="LocationMapViewController" sceneMemberID="viewController">
@@ -85,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJJ-aA-UEN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1218" y="1080"/>
+            <point key="canvasLocation" x="1239" y="434"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="F2l-HN-UZR">
