@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--How to dispose of...-->
+        <!--How to Dispose of...-->
         <scene sceneID="7Xu-uy-nVJ">
             <objects>
                 <tableViewController id="3w4-NK-vmb" customClass="WasteTypeListTableViewController" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                             <outlet property="delegate" destination="3w4-NK-vmb" id="PFd-LQ-ypu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="How to dispose of..." id="vpx-Bo-uIY"/>
+                    <navigationItem key="navigationItem" title="How to Dispose of..." id="vpx-Bo-uIY"/>
                     <connections>
                         <segue destination="Dpg-tA-ag2" kind="show" identifier="ShowLocations" id="Yfa-gZ-xad"/>
                     </connections>

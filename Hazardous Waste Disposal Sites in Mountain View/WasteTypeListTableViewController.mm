@@ -17,37 +17,42 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
 #include "Site.h"
 
 using std::vector;
 using std::string;
+using std::map;
 
 class WasteTypeListTableViewControllerInstanceVariables {
-public:
-  vector<string> wasteTypes;
-  vector<string> addresses;
-  vector<Site> sites_for_batteries_and_lamps;
   vector<Site> sites_for_batteries_only;
+public:
+  vector<Site> sites_for_batteries_and_lamps;
+  vector<string> wasteTypes;
   vector<Site> sites_for_paint;
   vector<Site> sites_for_batteries;
   vector<Site> *sites_to_display;
   string *title_to_display;
   vector<string> titles;
+  map<string, vector<Site> *> sites_for_waste_type;
   WasteTypeListTableViewControllerInstanceVariables()
-      : wasteTypes{"Batteries", "Lamps", "Paint", "Other"},
-        sites_for_batteries_and_lamps{
-            {"Blossom True Value Hardware",
-             "1297 W. El Camino Real, Mountain View, CA", 37.387872,
-             -122.089317},
-            {"Orchard Supply Hardware",
-             "2555 Charleston Road, Mountain View, CA", 37.4210681,
-             -122.0994957},
-            {"Bruce Bauer Lumber and Supply",
-             "134 San Antonio Circle, Mountain View, CA", 37.4076531,
-             -122.1097241},
-            {"Stanford Electric", "126 San Antonio Circle, Mountain View, CA",
-             37.408972, -122.1101135}},
+      : sites_for_batteries_and_lamps{{"Blossom True Value Hardware",
+                                       "1297 W. El Camino Real, Mountain View, "
+                                       "CA",
+                                       37.387872, -122.089317},
+                                      {"Orchard Supply Hardware",
+                                       "2555 Charleston Road, Mountain View, "
+                                       "CA",
+                                       37.4210681, -122.0994957},
+                                      {"Bruce Bauer Lumber and Supply",
+                                       "134 San Antonio Circle, Mountain View, "
+                                       "CA",
+                                       37.4076531, -122.1097241},
+                                      {"Stanford Electric", "126 San Antonio "
+                                                            "Circle, Mountain "
+                                                            "View, CA",
+                                       37.408972, -122.1101135}},
         sites_for_batteries_only{
             {"Radio Shack", "530 Showers Drive, Mountain View, CA", 37.4020375,
              -122.1076114},
@@ -68,17 +73,21 @@ public:
              -122.0532071},
             {"Orchard Supply", "2555 Charleston Road, Mountain View, CA",
              37.4210681, -122.0994957}},
-        sites_to_display(nullptr),
-        titles{"Where to Dispose of Batteries",
-               "Where to Dispose of Lamps",
-               "Where to Dispose of Paint"},
-        title_to_display(nullptr) {
+        titles{"Where to Dispose of Batteries", "Where to Dispose of Fluorescent Lamps",
+               "Where to Dispose of Paint"} {
     sites_for_batteries.insert(sites_for_batteries.end(),
                                sites_for_batteries_and_lamps.begin(),
                                sites_for_batteries_and_lamps.end());
     sites_for_batteries.insert(sites_for_batteries.end(),
                                sites_for_batteries_only.begin(),
                                sites_for_batteries_only.end());
+    sites_for_waste_type["Batteries"] = &sites_for_batteries;
+    sites_for_waste_type["Fluorescent Lamps"] = &sites_for_batteries_and_lamps;
+    sites_for_waste_type["Paint"] = &sites_for_paint;
+    for (auto pair : sites_for_waste_type) {
+      wasteTypes.push_back(pair.first);
+    }
+    wasteTypes.push_back("Other");
   }
 };
 
@@ -118,13 +127,7 @@ public:
     return;
   }
   _ivars.title_to_display = &_ivars.titles.at(indexPath.row);
-  if (_ivars.wasteTypes.at(indexPath.row) == "Batteries") {
-    _ivars.sites_to_display = &_ivars.sites_for_batteries;
-  } else if (_ivars.wasteTypes.at(indexPath.row) == "Lamps") {
-    _ivars.sites_to_display = &_ivars.sites_for_batteries_and_lamps;
-  } else if (_ivars.wasteTypes.at(indexPath.row) == "Paint") {
-    _ivars.sites_to_display = &_ivars.sites_for_paint;
-  }
+  _ivars.sites_to_display = _ivars.sites_for_waste_type.at(_ivars.wasteTypes.at(indexPath.row));
   [self performSegueWithIdentifier:@"ShowLocations" sender:self];
 }
 
