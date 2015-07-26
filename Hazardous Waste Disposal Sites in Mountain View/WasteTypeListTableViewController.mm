@@ -27,15 +27,47 @@ class WasteTypeListTableViewControllerInstanceVariables {
 public:
   vector<string> wasteTypes;
   vector<string> addresses;
-  vector<Site> sites;
+  vector<Site> sites_for_batteries_and_lamps;
+  vector<Site> sites_for_batteries_only;
+  vector<Site> sites_for_paint;
+  vector<Site> sites_for_batteries;
   WasteTypeListTableViewControllerInstanceVariables()
       : wasteTypes{"Batteries", "Lamps", "Paint", "Other"},
-        addresses{"1297 W. El Camino Real", "2555 Charleston Road",
-                  "134 San Antonio Circle"},
-        sites{{"Blossom True Value Hardware", "1297 W. El Camino Real", 37.3759962, -122.0601066},
-              {"Orchard Supply Hardware", "2555 Charleston Road", 37.4210681, -122.0994957},
-              {"Bruce Bauer Lumber and Supply", "134 San Antonio Circle", 37.4076531, -122.1097241},
-              {"Stanford Electric", "126 San Antonio Circle", 37.408972, -122.1101135}} {}
+        sites_for_batteries_and_lamps{
+            {"Blossom True Value Hardware",
+             "1297 W. El Camino Real, Mountain View, CA", 37.387872,
+             -122.089317},
+            {"Orchard Supply Hardware",
+             "2555 Charleston Road, Mountain View, CA", 37.4210681,
+             -122.0994957},
+            {"Bruce Bauer Lumber and Supply",
+             "134 San Antonio Circle, Mountain View, CA", 37.4076531,
+             -122.1097241},
+            {"Stanford Electric", "126 San Antonio Circle, Mountain View, CA",
+             37.408972, -122.1101135}},
+        sites_for_batteries_only{
+            {"Radio Shack", "530 Showers Drive, Mountain View, CA", 37.4020375,
+             -122.1076114},
+            {"Radio Shack", "1350 Grant Road, Mountain View, CA", 37.377018,
+             -122.0767202},
+            {"Best Buy", "2460 Charleston Road, Mountain View, CA", 37.4225039,
+             -122.0893578},
+            {"Target", "555 Showers Drive, Mountain View, CA", 37.4010106,
+             -122.1060628},
+            {"Green Citizen", "2500 W. El Camino Real #D, Mountain View, CA",
+             37.3999169, -122.1101169}},
+        sites_for_paint{
+            {"Dunn-Edwards", "1949 El Camino Real, Mountain View, CA",
+             37.3939783, -122.0980678},
+            {"Kelly Moore", "180 El Camino Real E, Mountain View, CA",
+             37.3796836, -122.0700783},
+            {"Kelly Moore", "411 Fairchild Dr, Mountain View, CA", 37.4038062,
+             -122.0532071},
+            {"Orchard Supply", "2555 Charleston Road, Mountain View, CA",
+             37.4210681, -122.0994957}} {
+               sites_for_batteries.insert(sites_for_batteries.end(), sites_for_batteries_and_lamps.begin(), sites_for_batteries_and_lamps.end());
+               sites_for_batteries.insert(sites_for_batteries.end(), sites_for_batteries_only.begin(), sites_for_batteries_only.end());
+             }
 };
 
 @implementation WasteTypeListTableViewController {
@@ -81,8 +113,7 @@ public:
                isKindOfClass:LocationMapViewController.class],
            @"bad");
   LocationMapViewController *vc = segue.destinationViewController;
-  vc.addresses = &_ivars.addresses;
-  vc.sites = &_ivars.sites;
+  vc.sites = &_ivars.sites_for_batteries;
 }
 
 @end
