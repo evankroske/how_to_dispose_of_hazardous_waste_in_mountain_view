@@ -35,7 +35,7 @@
             </objects>
             <point key="canvasLocation" x="550" y="434"/>
         </scene>
-        <!--Where to drop off batteries-->
+        <!--<filled in by code>-->
         <scene sceneID="FCT-8H-0jr">
             <objects>
                 <viewController id="Dpg-tA-ag2" customClass="LocationMapViewController" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="Dpg-tA-ag2" id="gfz-4n-1Lu"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Where to drop off batteries" id="xPl-41-DeD"/>
+                    <navigationItem key="navigationItem" title="&lt;filled in by code&gt;" id="xPl-41-DeD"/>
                     <connections>
                         <outlet property="view" destination="7Ja-lv-zAA" id="sR2-BP-wL5"/>
                     </connections>

@@ -31,6 +31,9 @@ public:
   vector<Site> sites_for_batteries_only;
   vector<Site> sites_for_paint;
   vector<Site> sites_for_batteries;
+  vector<Site> *sites_to_display;
+  string *title_to_display;
+  vector<string> titles;
   WasteTypeListTableViewControllerInstanceVariables()
       : wasteTypes{"Batteries", "Lamps", "Paint", "Other"},
         sites_for_batteries_and_lamps{
@@ -64,10 +67,19 @@ public:
             {"Kelly Moore", "411 Fairchild Dr, Mountain View, CA", 37.4038062,
              -122.0532071},
             {"Orchard Supply", "2555 Charleston Road, Mountain View, CA",
-             37.4210681, -122.0994957}} {
-               sites_for_batteries.insert(sites_for_batteries.end(), sites_for_batteries_and_lamps.begin(), sites_for_batteries_and_lamps.end());
-               sites_for_batteries.insert(sites_for_batteries.end(), sites_for_batteries_only.begin(), sites_for_batteries_only.end());
-             }
+             37.4210681, -122.0994957}},
+        sites_to_display(nullptr),
+        titles{"Where to Dispose of Batteries",
+               "Where to Dispose of Lamps",
+               "Where to Dispose of Paint"},
+        title_to_display(nullptr) {
+    sites_for_batteries.insert(sites_for_batteries.end(),
+                               sites_for_batteries_and_lamps.begin(),
+                               sites_for_batteries_and_lamps.end());
+    sites_for_batteries.insert(sites_for_batteries.end(),
+                               sites_for_batteries_only.begin(),
+                               sites_for_batteries_only.end());
+  }
 };
 
 @implementation WasteTypeListTableViewController {
@@ -99,13 +111,21 @@ public:
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (_ivars.wasteTypes[indexPath.row] == "Batteries") {
-    [self performSegueWithIdentifier:@"ShowLocations" sender:self];
-  } else {
+  if (_ivars.wasteTypes.at(indexPath.row) == "Other") {
     [[UIApplication sharedApplication]
         openURL:[NSURL URLWithString:@"http://www.mountainview.gov/depts/pw/"
                                      @"recycling/hazard/default.asp"]];
+    return;
   }
+  _ivars.title_to_display = &_ivars.titles.at(indexPath.row);
+  if (_ivars.wasteTypes.at(indexPath.row) == "Batteries") {
+    _ivars.sites_to_display = &_ivars.sites_for_batteries;
+  } else if (_ivars.wasteTypes.at(indexPath.row) == "Lamps") {
+    _ivars.sites_to_display = &_ivars.sites_for_batteries_and_lamps;
+  } else if (_ivars.wasteTypes.at(indexPath.row) == "Paint") {
+    _ivars.sites_to_display = &_ivars.sites_for_paint;
+  }
+  [self performSegueWithIdentifier:@"ShowLocations" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -113,7 +133,8 @@ public:
                isKindOfClass:LocationMapViewController.class],
            @"bad");
   LocationMapViewController *vc = segue.destinationViewController;
-  vc.sites = &_ivars.sites_for_batteries;
+  vc.title = [NSString stringWithUTF8String:_ivars.title_to_display->c_str()];
+  vc.sites = _ivars.sites_to_display;
 }
 
 @end
