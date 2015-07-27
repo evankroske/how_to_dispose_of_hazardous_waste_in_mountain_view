@@ -27,6 +27,7 @@ using std::map;
 
 class WasteTypeListTableViewControllerInstanceVariables {
   vector<Site> sites_for_batteries_only;
+
 public:
   vector<Site> sites_for_batteries_and_lamps;
   vector<string> wasteTypes;
@@ -58,8 +59,8 @@ public:
              -122.1076114},
             {"Radio Shack", "1350 Grant Road, Mountain View, CA", 37.377018,
              -122.0767202},
-            {"Best Buy", "2460 Charleston Road, Mountain View, CA", 37.4225039,
-             -122.0893578},
+            {"Best Buy", "2460 E Charleston Rd, Mountain View, CA", 37.423426,
+             -122.097144},
             {"Target", "555 Showers Drive, Mountain View, CA", 37.4010106,
              -122.1060628},
             {"Green Citizen", "2500 W. El Camino Real #D, Mountain View, CA",
@@ -73,7 +74,8 @@ public:
              -122.0532071},
             {"Orchard Supply", "2555 Charleston Road, Mountain View, CA",
              37.4210681, -122.0994957}},
-        titles{"Where to Dispose of Batteries", "Where to Dispose of Fluorescent Lamps",
+        titles{"Where to Dispose of Batteries",
+               "Where to Dispose of Fluorescent Lamps",
                "Where to Dispose of Paint"} {
     sites_for_batteries.insert(sites_for_batteries.end(),
                                sites_for_batteries_and_lamps.begin(),
@@ -127,7 +129,8 @@ public:
     return;
   }
   _ivars.title_to_display = &_ivars.titles.at(indexPath.row);
-  _ivars.sites_to_display = _ivars.sites_for_waste_type.at(_ivars.wasteTypes.at(indexPath.row));
+  _ivars.sites_to_display =
+      _ivars.sites_for_waste_type.at(_ivars.wasteTypes.at(indexPath.row));
   [self performSegueWithIdentifier:@"ShowLocations" sender:self];
 }
 
