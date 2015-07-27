@@ -65,7 +65,7 @@
   @[
     [NSURLQueryItem
      queryItemWithName:@"q"
-     value:[@[name, address, @"Mountain View, CA"] componentsJoinedByString:@", "]]];
+     value:[@[name, address] componentsJoinedByString:@", "]]];
   [[UIApplication sharedApplication] openURL:components.URL];
 }
 
