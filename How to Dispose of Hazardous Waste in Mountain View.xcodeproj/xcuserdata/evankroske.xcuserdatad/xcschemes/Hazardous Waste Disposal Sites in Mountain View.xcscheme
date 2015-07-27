@@ -107,6 +107,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "How to Dispose of Hazardous Waste in Mountain View"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
