@@ -58,13 +58,14 @@
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
   NSAssert([view.annotation isKindOfClass:[MKPointAnnotation class]], @"type error");
   MKPointAnnotation *annotation = view.annotation;
+  NSString *name = annotation.title;
   NSString *address = annotation.subtitle;
   NSURLComponents *components = [NSURLComponents componentsWithString:@"http://maps.apple.com/"];
   components.queryItems =
   @[
     [NSURLQueryItem
      queryItemWithName:@"q"
-     value:[address stringByAppendingString:@", Mountain View"]]];
+     value:[@[name, address, @"Mountain View, CA"] componentsJoinedByString:@", "]]];
   [[UIApplication sharedApplication] openURL:components.URL];
 }
 
