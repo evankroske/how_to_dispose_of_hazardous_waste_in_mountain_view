@@ -25,6 +25,8 @@ using std::vector;
 using std::string;
 using std::map;
 
+static const string TITLE_BATTERIES = "Batteries";
+
 class WasteTypeListTableViewControllerInstanceVariables {
   vector<Site> sites_for_batteries_only;
 
@@ -83,7 +85,7 @@ public:
     sites_for_batteries.insert(sites_for_batteries.end(),
                                sites_for_batteries_only.begin(),
                                sites_for_batteries_only.end());
-    sites_for_waste_type["Batteries"] = &sites_for_batteries;
+    sites_for_waste_type[TITLE_BATTERIES] = &sites_for_batteries;
     sites_for_waste_type["Fluorescent Lamps"] = &sites_for_batteries_and_lamps;
     sites_for_waste_type["Paint"] = &sites_for_paint;
     for (auto pair : sites_for_waste_type) {
@@ -128,6 +130,10 @@ public:
                                      @"recycling/hazard/default.asp"]];
     return;
   }
+  if (_ivars.wasteTypes.at(indexPath.row) == TITLE_BATTERIES) {
+    [self performSegueWithIdentifier:@"ShowBatteryTypes" sender:self];
+    return;
+  }
   _ivars.title_to_display = &_ivars.titles.at(indexPath.row);
   _ivars.sites_to_display =
       _ivars.sites_for_waste_type.at(_ivars.wasteTypes.at(indexPath.row));
@@ -135,12 +141,14 @@ public:
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  NSAssert([segue.destinationViewController
-               isKindOfClass:LocationMapViewController.class],
-           @"bad");
-  LocationMapViewController *vc = segue.destinationViewController;
-  vc.title = [NSString stringWithUTF8String:_ivars.title_to_display->c_str()];
-  vc.sites = _ivars.sites_to_display;
+  if ([segue.identifier  isEqual: @"ShowLocations"]) {
+    NSAssert([segue.destinationViewController
+                 isKindOfClass:LocationMapViewController.class],
+             @"bad");
+    LocationMapViewController *vc = segue.destinationViewController;
+    vc.title = [NSString stringWithUTF8String:_ivars.title_to_display->c_str()];
+    vc.sites = _ivars.sites_to_display;
+  }
 }
 
 @end
