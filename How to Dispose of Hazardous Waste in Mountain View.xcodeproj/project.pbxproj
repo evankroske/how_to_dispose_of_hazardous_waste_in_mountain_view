@@ -15,7 +15,6 @@
 		3B0C03851B40F483001B3762 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3B0C03831B40F483001B3762 /* LaunchScreen.xib */; };
 		3B0C03911B40F483001B3762 /* Hazardous_Waste_Disposal_Sites_in_Mountain_ViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B0C03901B40F483001B3762 /* Hazardous_Waste_Disposal_Sites_in_Mountain_ViewTests.m */; };
 		3B2B907E1B4A0AD00091E84C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B2B907D1B4A0AD00091E84C /* MapKit.framework */; };
-		3B8F55061B69D72500367F83 /* BatteryTypeListTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3B8F55051B69D72500367F83 /* BatteryTypeListTableViewController.mm */; };
 		3BEB9E8D1B45EE440044051D /* WasteTypeListTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3BEB9E8C1B45EE440044051D /* WasteTypeListTableViewController.mm */; };
 /* End PBXBuildFile section */
 
@@ -44,8 +43,6 @@
 		3B0C038F1B40F483001B3762 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B0C03901B40F483001B3762 /* Hazardous_Waste_Disposal_Sites_in_Mountain_ViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hazardous_Waste_Disposal_Sites_in_Mountain_ViewTests.m; sourceTree = "<group>"; };
 		3B2B907D1B4A0AD00091E84C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		3B8F55041B69D72500367F83 /* BatteryTypeListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BatteryTypeListTableViewController.h; sourceTree = "<group>"; };
-		3B8F55051B69D72500367F83 /* BatteryTypeListTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BatteryTypeListTableViewController.mm; sourceTree = "<group>"; };
 		3BEB9E8B1B45EE440044051D /* WasteTypeListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WasteTypeListTableViewController.h; sourceTree = "<group>"; };
 		3BEB9E8C1B45EE440044051D /* WasteTypeListTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WasteTypeListTableViewController.mm; sourceTree = "<group>"; };
 		6E3C065A1B4F669F0074899B /* Site.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Site.h; sourceTree = "<group>"; };
@@ -92,8 +89,6 @@
 		3B0C03731B40F483001B3762 /* Hazardous Waste Disposal Sites in Mountain View */ = {
 			isa = PBXGroup;
 			children = (
-				3B8F55041B69D72500367F83 /* BatteryTypeListTableViewController.h */,
-				3B8F55051B69D72500367F83 /* BatteryTypeListTableViewController.mm */,
 				3B0C03781B40F483001B3762 /* AppDelegate.h */,
 				3B0C03791B40F483001B3762 /* AppDelegate.m */,
 				3B0C037B1B40F483001B3762 /* LocationMapViewController.h */,
@@ -242,7 +237,6 @@
 			files = (
 				3B0C037D1B40F483001B3762 /* LocationMapViewController.mm in Sources */,
 				3B0C037A1B40F483001B3762 /* AppDelegate.m in Sources */,
-				3B8F55061B69D72500367F83 /* BatteryTypeListTableViewController.mm in Sources */,
 				3B0C03771B40F483001B3762 /* main.m in Sources */,
 				3BEB9E8D1B45EE440044051D /* WasteTypeListTableViewController.mm in Sources */,
 			);
