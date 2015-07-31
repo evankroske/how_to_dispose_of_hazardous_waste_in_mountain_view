@@ -27,16 +27,16 @@ using std::map;
 
 class WasteTypeListTableViewControllerInstanceVariables {
   vector<Site> sites_for_batteries_only;
-
-public:
   vector<Site> sites_for_batteries_and_lamps;
-  vector<string> wasteTypes;
   vector<Site> sites_for_paint;
   vector<Site> sites_for_batteries;
+public:
+  vector<string> wasteTypes;
   vector<Site> *sites_to_display;
   string *title_to_display;
   vector<string> titles;
   map<string, vector<Site> *> sites_for_waste_type;
+  map<string, string> url_for_waste_type;
   WasteTypeListTableViewControllerInstanceVariables()
       : sites_for_batteries_and_lamps{{"Blossom True Value Hardware",
                                        "1297 W. El Camino Real, Mountain View, "
@@ -76,20 +76,27 @@ public:
              37.4210681, -122.0994957}},
         titles{"Where to Dispose of Batteries",
                "Where to Dispose of Fluorescent Lamps",
-               "Where to Dispose of Paint"} {
+               "Where to Dispose of Paint"},
+        url_for_waste_type{{"Automotive Batteries",
+                            "https://www.sccgov.org/sites/iwm/hhw/Documents/"
+                            "Auto%20batteries,%20tires,%20antifreeze.pdf"},
+                           {"Other", "http://www.mountainview.gov/depts/pw/"
+                                     "recycling/hazard/default.asp"}} {
     sites_for_batteries.insert(sites_for_batteries.end(),
                                sites_for_batteries_and_lamps.begin(),
                                sites_for_batteries_and_lamps.end());
     sites_for_batteries.insert(sites_for_batteries.end(),
                                sites_for_batteries_only.begin(),
                                sites_for_batteries_only.end());
-    sites_for_waste_type["Batteries"] = &sites_for_batteries;
+    sites_for_waste_type["Batteries (Non-Automotive)"] = &sites_for_batteries;
     sites_for_waste_type["Fluorescent Lamps"] = &sites_for_batteries_and_lamps;
     sites_for_waste_type["Paint"] = &sites_for_paint;
     for (auto pair : sites_for_waste_type) {
       wasteTypes.push_back(pair.first);
     }
-    wasteTypes.push_back("Other");
+    for (auto pair : url_for_waste_type) {
+      wasteTypes.push_back(pair.first);
+    }
   }
 };
 
@@ -122,15 +129,17 @@ public:
 
 - (void)tableView:(UITableView *)tableView
     didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  if (_ivars.wasteTypes.at(indexPath.row) == "Other") {
+  string waste_type = _ivars.wasteTypes.at(indexPath.row);
+  if (_ivars.url_for_waste_type.count(waste_type) == 1) {
     [[UIApplication sharedApplication]
-        openURL:[NSURL URLWithString:@"http://www.mountainview.gov/depts/pw/"
-                                     @"recycling/hazard/default.asp"]];
+        openURL:[NSURL URLWithString:[NSString stringWithUTF8String:
+                                                   _ivars.url_for_waste_type
+                                                       .at(waste_type)
+                                                       .c_str()]]];
     return;
   }
   _ivars.title_to_display = &_ivars.titles.at(indexPath.row);
-  _ivars.sites_to_display =
-      _ivars.sites_for_waste_type.at(_ivars.wasteTypes.at(indexPath.row));
+  _ivars.sites_to_display = _ivars.sites_for_waste_type.at(waste_type);
   [self performSegueWithIdentifier:@"ShowLocations" sender:self];
 }
 
