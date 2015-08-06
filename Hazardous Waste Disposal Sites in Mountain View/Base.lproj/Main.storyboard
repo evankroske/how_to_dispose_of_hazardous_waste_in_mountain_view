@@ -26,7 +26,13 @@
                             <outlet property="delegate" destination="3w4-NK-vmb" id="PFd-LQ-ypu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="How to Dispose of..." id="vpx-Bo-uIY"/>
+                    <navigationItem key="navigationItem" title="How to Dispose of..." id="vpx-Bo-uIY">
+                        <barButtonItem key="leftBarButtonItem" title="About" id="vCf-xJ-jSJ">
+                            <connections>
+                                <segue destination="jqj-xx-rf4" kind="show" id="Jhh-LH-2Do"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="Dpg-tA-ag2" kind="show" identifier="ShowLocations" id="Yfa-gZ-xad"/>
                     </connections>
@@ -34,6 +40,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yV-Rn-2j8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="550" y="434"/>
+        </scene>
+        <!--About This App-->
+        <scene sceneID="cWK-Dq-1F8">
+            <objects>
+                <viewController id="jqj-xx-rf4" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qwd-j8-GbK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gwm-Dp-tT3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UXw-ZZ-f2Z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About This App" id="iAj-k0-rjg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A16-ei-gNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="550" y="1130"/>
         </scene>
         <!--<filled in by code>-->
         <scene sceneID="FCT-8H-0jr">

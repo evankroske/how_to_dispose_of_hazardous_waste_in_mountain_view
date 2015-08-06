@@ -144,12 +144,14 @@ public:
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-  NSAssert([segue.destinationViewController
-               isKindOfClass:LocationMapViewController.class],
-           @"bad");
-  LocationMapViewController *vc = segue.destinationViewController;
-  vc.title = [NSString stringWithUTF8String:_ivars.title_to_display->c_str()];
-  vc.sites = _ivars.sites_to_display;
+  if ([segue.identifier isEqual:@"ShowLocations"]) {
+    NSAssert([segue.destinationViewController
+                 isKindOfClass:LocationMapViewController.class],
+             @"bad");
+    LocationMapViewController *vc = segue.destinationViewController;
+    vc.title = [NSString stringWithUTF8String:_ivars.title_to_display->c_str()];
+    vc.sites = _ivars.sites_to_display;
+  }
 }
 
 @end
