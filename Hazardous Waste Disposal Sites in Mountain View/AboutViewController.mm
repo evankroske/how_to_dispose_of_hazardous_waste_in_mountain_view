@@ -23,10 +23,15 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
   WKWebView *webView = (WKWebView *)self.view;
-  NSString *path = [[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"];
-  [webView loadRequest:[NSURLRequest requestWithURL:[NSURL fileURLWithPath:path]]];
+  NSString *path =
+      [[NSBundle mainBundle] pathForResource:@"about" ofType:@"html"];
+  [webView
+      loadHTMLString:[NSString stringWithContentsOfFile:path
+                                               encoding:NSUTF8StringEncoding
+                                                  error:nil]
+             baseURL:[NSURL URLWithString:path]];
 }
 
 @end
